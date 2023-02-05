@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The courses</title>
+    <style>
+        .course{
+            padding: 10px;
+            border:1px solid black;
+            display: flex;
+            align-self: center;
+        }
+        
+        button{
+            color:aqua;
+            border-radius: 5px;
+            background-color: brown;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <button id="Addcourse" onclick="Addcourse()">Add courses</button>
+    <div class="course"> 
+        <div>
+        <h3 style="background-color:red; border-radius: 5px;">Hindi Essentials</h3>
+        <p>This course provides the whole information and language learning tactics for essentials of hindi</p>
+        <div class="buttonsArrangement">
+            <button onclick="deletecourse()">remove</button>
+            <button>enroll</button>
+        </div>
+    </div>
+        
+    </div>
+    <script>
+        
+        function Addcourse(){
+            let courseName=prompt("Enter the course name:");
+            let newDiv=document.createElement('div');
+            document.body.append(newDiv);
+            let newDiv1=document.createElement('div');
+            newDiv.append(newDiv1);
+            let textEl=document.createTextNode("hlo bro");
+            
+            newDiv1.innerHTML='<h3 style="background-color:red; border-radius: 5px;">'+ courseName +'</h3> <p>This course provides the whole information and language learning tactics for essentials of hindi</p><div class="buttonsArrangement"><button>remove</button><button>enroll</button></div>';
+            newDiv.setAttribute("class","course");
+        }
+        function deletecourse(){
+        let delete=document.getSelection()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<style>
+    h1{
+        color:white;
+        background-color: yellow;
+        padding:10px;
+        text-align: center;
+        text-shadow:0 0 10px green ;
+    }
+</style>
+<script>
+    class Product{
+        constructor(itemName,price,discount){
+            this.itemName=itemName;
+            this.price=price;
+            this.discount=discount;
+            function getDiscount(){
+                return this.discount;
+            }
+            function setDiscount(value){
+                return this.discount=value;
+            }
+        }
+    }
+
+    const pencil=new Product("pencil",50,2);
+    pencil.setDiscount=3;
+    console.log(pencil.getDiscount);
+    class furniture extends Product{
+        constructor(itemName,price,discount,wood){
+            super(itemName,price,discount);
+            this.wood=wood;
+            function actualAmount(){
+                return (price*discount/100);
+            }
+        }
+
+    }
+    const chair =new furniture("chair",100,2,"Neem");
+    console.log(chair.itemName);
+  
+    let square={
+        side:5,
+        get area(){
+            area=this.side**2
+            return area; 
+        }
+    }
+    
+    console.log(square.area);
+
+    function stringConcat(seperator,...strings){
+        returnVal='';
+        strings.forEach((string,i) => {
+            if(i==strings.length-1){
+                returnVal=returnVal+string;
+            }
+            else{
+                returnVal=returnVal+string+seperator;
+            }
+            return returnVal;
+        });
+    }
+    console.log(stringConcat("$","amrath","rama","shiva"));
+    
+        
+        
+</script>
+
+<body>
+    
+    <h1>Java Script</h1>
+</body>
+</html>

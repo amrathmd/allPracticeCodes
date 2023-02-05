@@ -1,0 +1,6 @@
+f=open("file.txt",'w')
+f.write("i love python")
+f.close()
+f=open("file.txt",'r')
+print(f.read())
+f.close()

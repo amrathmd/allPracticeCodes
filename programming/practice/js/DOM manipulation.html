@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+<style>
+    td,tr,table {
+        border: 1px solid black;
+    }
+</style>
+<body>
+    
+    <ol id="element" data="valid">
+        <li class="li" id="first-div">first element</li>
+        <li class="li">second element</li>
+        <li class="li">third element</li>
+    </ol>
+   
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+
+    </table>
+    <ul>
+        <li><a  href="https://google.com" class="links">https://google.com</a></li>
+        <li><a href="hub.rgukt.ac.in">hub.rgukt.ac.in</a></li>
+       <li><a href="https://instagram.com">https://instagram.com</a> </li>
+    </ul>
+    <button onclick="alert('hello')" id="clickbtn">Hello</button>
+    <script>
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.body);
+       
+        console.log(document.body.firstElementChild)
+        console.log(document.body.childNodes);
+        const oltag=document.body.children[0];
+        console.log(oltag.children[0].nextElementSibling.textContent);
+        const tableTag=document.body.children[1];
+        tableTag.tBodies[0].rows[0].style="background-color:blue;"
+        tableTag.tBodies[0].rows[0].nextElementSibling.style="background-color:red;"
+        tableTag.tBodies[0].rows[2].style="background-color:orange;";
+
+
+        //selecting html elements:
+        const idElement=element.style.backgroundColor="red";
+        const olTag=document.getElementById("element");
+        console.log(olTag);
+       // const listItems=document.getElementsByClassName("li");
+        //console.log(listItem);
+        const listItems=document.querySelector("ol > li:nth-child(odd)");
+        console.log(listItems.textContent);
+        //const links=document.getAttribute("href");
+        //console.log(links)
+        const newDiv=document.createElement('div');
+        const textC=document.createTextNode('I Am Mohammed Amrath');
+        document.body.append(newDiv);
+        const firstDiv=document.getElementById("first-div");
+        firstDiv.replaceWith(newDiv);
+        newDiv.prepend(textC);
+        
+        function clear(element){
+            const newDiv=document.createElement('div');
+            document.body.append(newDiv);
+            element.replaceWith(newDiv);
+            
+        }
+        clear(firstDiv);
+        const clickbtn=document.getElementById("clickbtn");
+        function callme(){
+            let name=prompt("Enter your name:")
+            alert("Hello "+name);
+            alert("how are you!");
+        }
+        clickbtn.onclick(callme);
+        clickbtn.addEventListener("click",callme)
+        const set=document.getElementsByClassName(".links")
+        set.backgroundColor="red";
+
+
+
+    </script>
+    
+</body>
+
+</html>

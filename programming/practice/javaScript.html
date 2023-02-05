@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript</title>
+    
+</head>
+
+<body>
+    <ol type="A">
+        <li>Amrath</li>
+        <li>Shiva</li>
+    </ol>
+    <table id="tableitems">
+        <tr>
+            <td>name</td>
+            <td>id</td>
+        </tr>
+        <tr>
+            <td>Amrath</td>
+            <td>B181094</td>
+        </tr>
+    </table>
+    
+    <h1 id="Some" order="pending">welcome again amrath</h1>
+    <script>
+        let liTag=document.body.children[0].children[0].textContent;
+        liTag="Umar";
+        console.log(liTag);
+        let amrath=document.body.children[1].firstElementChild.textContent;
+        console.log(amrath);
+        let element=document.getElementById("Some");
+        element.style.backgroundColor="Green";
+        let table=document.getElementById("tableitems");
+        table.style.backgroundColor="red";
+        const newDiv=document.createElement('div');
+        document.body.append(newDiv);
+        const text=document.createTextNode("hi Bro");
+        newDiv.setAttribute("id","newDiv");
+        newDiv.append(text);
+        let element1=document.createElement("h1");
+        newDiv.prepend(element1);
+        let text1=document.createTextNode("Hi bro");
+        element1.appendChild(text1);
+        let newButton=document.createElement('button');
+        newDiv.append(newButton);
+        let textbutton=document.createTextNode('Click me!');
+        newButton.append(textbutton);
+        newButton.setAttribute("id","newB");
+        let butt=document.getElementById("newB");
+        butt.addEventListener('click',myfunction);
+        function myfunction(){
+            alert("hello dear!");
+        }
+    
+
+        
+
+
+    </script>
+
+</body>
+</html>
